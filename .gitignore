@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets
+.env
+
+# Experiment outputs (regenerated)
+experiments/**/results/
+experiments/**/results_gate/
+experiments/**/ablation_results/
+experiments/**/figs/
+experiments/**/figs_*/
+experiments/**/ground_truth/
+*.png
+*.pkl
+*.log
+workspace/
+
+# OS
+.DS_Store

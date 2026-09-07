@@ -1,0 +1,41 @@
+[project]
+name = "bilevel-srma"
+version = "1.0.0"
+description = "Bilevel Coordinated Reflection (SRMA): Resource Contest and Overcooked coordination experiments."
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy>=1.26,<2",
+    "python-dotenv",
+    "litellm",
+]
+
+[project.optional-dependencies]
+# Overcooked scenario uses the original overcooked_ai env (NOT jaxmarl).
+overcooked = [
+    "overcooked_ai",
+    "numpy<2",
+    "scipy<1.13",   # scipy>=1.13 requires numpy>=2 and breaks overcooked_ai
+    "pillow",
+]
+# Optional memory-retrieval platform (worker/retrieval.py) — only if you use
+# the top-k retrieval hooks; not required by the default scenario runs.
+retrieval = [
+    "sentence-transformers",
+]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "matplotlib",
+    "statsmodels",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["worker", "env", "memory", "orchestrator", "scenarios", "experiments"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
