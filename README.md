@@ -6,11 +6,18 @@ provides the bilevel orchestrator–worker framework and
 **Stochastic Reflective Memory Ascent (SRMA)**, with two coordination testbeds:
 **Resource Contest (RC)** and **Overcooked (OC)**.
 
-> This release covers the RC and OC scenarios. The SWE-bench scenario will be open-sourced separately later.
+> This release covers the RC and OC scenarios. The SWE-bench scenario will be open-sourced
+> separately in about two weeks.
 
 All agents are **frozen LLMs** called through an OpenAI-compatible endpoint; the only
 adaptation is textual memory editing (no weights are trained or shipped). Every reported
 metric is computed from environment ground truth — never from an LLM judge.
+
+![Bilevel Coordinated Reflection](assets/bilevel.png)
+
+*The upper-level orchestrator decomposes the task and evolves strategy memory `m_o` on the
+slower timescale β; lower-level workers give η\_c-better responses and commit reflections to
+the shared execution memory `m_e` only on verifier-risk descent, on the faster timescale α.*
 
 ---
 
