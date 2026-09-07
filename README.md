@@ -1,7 +1,8 @@
 # Bilevel Coordinated Reflection (SRMA)
 
 Reference implementation for *Bilevel Coordinated Reflection: A Game-Theoretic Approach to
-Multi-Agent LLM Systems*. It provides the bilevel orchestrator–worker framework and
+Multi-Agent LLM Systems* ([arXiv:2609.02750](https://arxiv.org/abs/2609.02750)). It
+provides the bilevel orchestrator–worker framework and
 **Stochastic Reflective Memory Ascent (SRMA)**, with two coordination testbeds:
 **Resource Contest (RC)** and **Overcooked (OC)**.
 
@@ -126,9 +127,10 @@ tests/             unit tests
 If you use this code, please cite the paper:
 
 ```bibtex
-@inproceedings{chen2027bilevel,
-  title     = {Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems},
-  author    = {Chen, Yihang},
-  year      = {2027},
+@article{chen2026bilevel,
+  title   = {Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems},
+  author  = {Chen, Yihang and Chen, Yuxiang and Huang, Yuxuan and Fang, Meng and Luo, Weilin and Wang, Jun},
+  journal = {arXiv preprint arXiv:2609.02750},
+  year    = {2026},
 }
 ```
