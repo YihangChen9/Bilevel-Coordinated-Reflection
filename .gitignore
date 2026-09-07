@@ -22,3 +22,7 @@ workspace/
 
 # OS
 .DS_Store
+
+# keep README/doc figures
+!assets/
+!assets/*.png
